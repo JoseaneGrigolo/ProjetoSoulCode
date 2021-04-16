@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!--Requisitos: Jquery está nesta pagina (HOME) -->
+<!--Requisitos: JS e FORMULÁRIO está na pagina (CONTATO) -->
+<!--Requisitos: CSS está em todas paginas (no Footer) -->
+<!--Requisitos: HTML aside/article está na pagina (PRODUTOS) -->
+<!--Requisitos: GRID e MENU/NAV em todas paginas(no Body) -->
+<!--Requisitos: ESTILO BOTOES nas paginas (HOME - CONTATO) -->
+<!--Requisitos: 4pag(min) - OK, PALETA CORES - OK, LOGO-ARQUIVO - OK -->
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home</title>
+    <script>
+        function abre_banner() {
+            var banner_obj = document.getElementById('banner_popup');
+            banner_obj.style.right = '15px';
+            banner_obj.style.top = '45%';
+            banner_obj.style.display = 'block';
+            banner_obj.style.position = 'fixed';
+            banner_obj.style.styleFloat = 'right';
+            banner_obj.style.zIndex = '500';           
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $("html,body").animate({ scrollTop: 0 }, 1800);
+                return false;
+            });
+        });
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop >= 220 || document.documentElement.scrollTop >= 220) {
+                abre_banner();
+            } else {
+                document.getElementById("banner_popup").style.display = "none";
+            }
+        }
+    </script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="banner_popup" title="Navegacao" style="display:none">
+        <a href="#navegacao3" class="scroll">
+            <div id="BotaoScroll" style="margin: 3px;" title="Ir para Cabeçalho"></div>
+        </a>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 back">
+                <nav class="navbar navbar-expand-sm navbar-dark back">
+                    <!--Logo-->
+                    <a class="navbar-brand" href="./index.html"><img src="img/logoBranco.png" style=" height:15vh;"></a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao3">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--Navegação-->
+                    <div id="navegacao3" class="collapse navbar-collapse">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link cores" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link cores" href="./produtos.html">Produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link cores" href="./sobre.html">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link cores" href="./contato.html">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row align-items-center parallax2 fundo5">
+            <div class="col-md-6 text-center" style="color: #612961; height: 70vh">
+            </div>
+            <div class="col-md-6 text-center" style="height: 70vh">
+                <h1  class="text-white display-1 branco marcatexto">O verdadeiro amor em forma de açaí... </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center bg-light" style="height:50vh">
+                <h1 class="display-4 letraH1" style="margin-top: 90px;"> Nosso produto é brasileiro e poderoso!</h1>
+                <h1 class="display-4 letraH1 mt-3"> Com uma repleta seleção de acompanhamentos</h1>
+                <h1 class="display-4 letraH1 mt-3"> você pode fazer açaí do seu
+                    jeito.</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 fundo3 parallax2" style="height: 60vh">
+            </div>
+            <div class="col-md-6 text-white text-center" style="background-color: #612961; height: 60vh">
+                <h1 class="display-3 mt-5">Aproveite todos acompanhamentos</h1>
+                <h4 class="fonte mt-5">Leite em pó, Granola, Castanha, Ovomaltine, Cobertura de chocolate , Frutas Diversas
+                </h4>
+                <h3 class="display-4 mt-5">... E muito
+                    mais!</h3>
+                <a class="btn btn-success cores" style="font-size: 20px;" href="./produtos.html" role="button">FAZER PEDIDO!</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center bg-light" style="height: 25vh">
+                <h1 class="display-2 letraH1 mt-5">Fique Ligado</h1>
+            </div>
+        </div>
+        <div class="row bg-light">
+            <div class="col-md-4 text-center" style="height: 30h">
+                <br><br>
+                <a href="./produtos.html"><img src="img/nutricao.svg" style=" height: 10vh;" class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Informações Nutricionais</p>
+            </div>
+            <div class="col-md-4 text-center" style="height: 30vh">
+                <br><br>
+                <a href="./sobre.html"><img src="img/pessoa-nao-autorizada.svg" style=" height: 10vh;"
+                        class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Quem Somos</p>
+            </div>
+            <div class="col-md-4 text-center" style="height: 30vh">
+                <br><br>
+                <a href="./contato.html"> <img src="img/grupo-de-bate-papo.svg" style=" height: 10vh;"
+                        class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Seja Nosso Parceiro</p>
+            </div>
+        </div>
+
+        <a href="#navegacao3" onclick="topFunction()" id="myBtn" title="Go to top"><img width="50px" id="myBtn"
+                src="img/seta.png" alt="" style="display:none;" /></a>
+
+        <div class="row">
+            <div class="col-md-12 fundo parallax2" style=" height: 60vh">
+                <main class="page-content">
+                    <div class="card">
+                        <div class="content">
+                            <p class="copy">Fique por dentro das promoções!</p>
+                            <a class="btn btn-success cores" href="https://www.facebook.com/seletoacai" role="button">Quero
+                                Açaí</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <p class="copy">Acompanhe nossas lojas!</p>
+                            <a class="btn btn-success cores" href="https://www.instagram.com/seletoacai/" role="button">Quero
+                                Conhecer</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <p class="copy">Fique por dentro das novas lojas!</p>
+                            <a class="btn btn-success cores" href="./sobre.html" role="button">Quero News</a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center bg-light" style="height: 25vh">
+                <h1 class="display-2 letraH1 mt-5">Nossas Lojas</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center bg-light" style="height: 30vh">
+                <a href="./sobre.html"><img src="img/iconfinder_Marker_green_2190994.png" class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Av Monsenhor Gonçalo Eufrásio</p>
+                <p class="letraP">Ubajara/CE</p>
+            </div>
+            <div class="col-md-4 text-center bg-light" style="height: 30vh">
+                <a href="./sobre.html"><img src="img/iconfinder_Marker_green_2190994.png" class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Av Tabajara, 245</p>
+                <p class="letraP">São Benedito/CE</p>
+            </div>
+            <div class="col-md-4 text-center bg-light" style="height: 30vh">
+                <a href="./sobre.html"><img src="img/iconfinder_Marker_green_2190994.png" class="img-fluid"></a>
+                <br><br>
+                <p class="letraP">Rua Zeca Teles de Menezes, 200</p>
+                <p class="letraP">Tianguá/CE</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="background-color: #612961; height: 50vh">
+                <footer>
+                    <img src="img/logoBranco.png" style=" height:20vh;">
+                    <br><br>
+                    <a class="espaco" href="https://www.instagram.com/seletoacai/"><img src="img/instagram.svg"
+                            style="height:5vh"></a>
+                    <a class="espaco" href="https://www.facebook.com/seletoacai"><img src="img/facebook.svg"
+                            style="height:5vh"></a>
+                    <a class="espaco" href="https://linktr.ee/Seletoacai"><img src="img/whatsapp.svg"
+                            style="height:5vh"></a>
+                    <br><br>
+                    <form>
+                        <p class="estilo">Receba nosso Newsletter:</p>
+                        <input class="estilo" type="email" id="email" name="email" placeholder="Digite seu e-mail...">
+                        <button class="estilo" type="submit">Enviar</button>
+                    </form>
+                    <br>
+                    <span class="spanB">Desenvolvido por Joseane Grigolo | SoulCode Academy.</span>
+                    <b class="spanB">Todos os direitos reservados. © 2021.</b>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
